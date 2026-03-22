@@ -1,0 +1,45 @@
+Read and follow `DESIGN_GUARDRAILS.md` and `DESIGN_COPY_GUARDRAILS.md` before making any changes.
+
+Also take the findings from the previously executed spawn review into account. Treat the spawn review report as prioritized pre-analysis:
+- validate the reported findings against the current state
+- fix confirmed points directly in this pass
+- add your own additional findings if you discover more problems
+- do not adopt spawn findings blindly; check them against the actual implementation
+
+Task:
+Perform a complete UI/UX polishing pass on this app. No redesign.
+
+Scope:
+- review all relevant pages, dialogs, sidebars, split views, forms, tables, cards, detail views, and portal views in the browser
+- incorporate and validate the prioritized findings from the initial spawn review
+- identify additional visual, typographic, spatial, and interaction inconsistencies
+- fix the problems directly in code
+- normalize shared components, tokens, and layout rules where it makes sense
+- preserve the existing product language, but make it calmer, cleaner, more consistent, and more production-ready
+
+Priority:
+1. fix clearly broken or visibly flawed UI
+2. implement confirmed high-priority findings from the spawn review
+3. reduce visual overload
+4. unify hierarchy, spacing, and typography
+5. make forms and action areas more readable and efficient
+6. review and correct responsive behavior and scroll behavior
+
+Important:
+- do not just list problems; fix them
+- use spawn-review findings as input, but validate them against the real UI
+- do not introduce a new design language
+- do not add unnecessary new panels or boxes
+- do not use one-off CSS hacks when the issue should be solved in shared components or tokens
+- use icon-only buttons for obvious actions when space is tight, but only with tooltip and `aria-label`
+- preserve functionality
+- visible German text must use correct umlauts, Swiss spelling, and Swiss typography
+
+At the end, report:
+- a short audit summary
+- which spawn-review findings were confirmed
+- which of those were implemented directly
+- which spawn-review findings were rejected, adjusted, or postponed
+- changed files and components
+- normalized shared rules, tokens, or components
+- remaining problems or blockers

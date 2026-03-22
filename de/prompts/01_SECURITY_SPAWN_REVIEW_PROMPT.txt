@@ -1,0 +1,66 @@
+Spawne dedizierte Subagents für einen reinen Security-Review dieser Codebasis.
+
+Ziel:
+Führe zuerst nur eine Analyse durch. In dieser Phase geht es ausschliesslich um sicherheitsrelevante Bewertung, Priorisierung und strukturierte Dokumentation der Findings. Es darf noch nichts implementiert, gehärtet oder gefixt werden.
+
+Vorgehen:
+- Spawne Subagents, wenn es sinnvoll ist, um sicherheitsrelevante Bereiche parallel zu prüfen.
+- Teile den Review bei Bedarf in sinnvolle Bereiche auf, zum Beispiel Auth, Session-Handling, Input-Validation, API-Grenzen, privilegierte Aktionen, Secret-Handling oder Fehlerbehandlung.
+- Lass alle Subagents nur lesen, prüfen und dokumentieren.
+- Konsolidiere die Resultate danach in einen einzigen Gesamtbericht.
+- Fasse doppelte Findings und verwandte Risiken zusammen.
+
+Scope:
+- Authentifizierung und Autorisierung
+- Input-Handling, Validierung und Sanitization
+- Secret-Handling und versehentliche Exposition
+- API-Grenzen und serverseitige Durchsetzung
+- Session-, Token- und Cookie-Handling
+- gefährliche Client-Annahmen
+- Fehlerbehandlung und Leakage
+- Storage- und Request-Verhalten
+- privilegierte Aktionen und Guards
+- offensichtliche Datenexposition oder unsichere Defaults
+
+Wichtige Regeln:
+- Nur Review.
+- Keinen Code ändern.
+- Keine Dateien erstellen.
+- Nichts fixen.
+- Nichts härten.
+- Keine Exploit-Anleitungen erzeugen.
+- Keine direkte Umsetzung in dieser Phase.
+
+Der konsolidierte Bericht muss enthalten:
+1. Kurze Zusammenfassung
+2. Wichtigste Security-Findings nach Priorität bzw. Schweregrad
+3. Betroffene Dateien, Routen, Module oder Bereiche
+4. Warum jedes Problem relevant ist
+5. Empfohlene Remediation-Richtung auf hoher Ebene
+6. Einordnung jedes Findings in:
+   - sicher sofort umsetzbar
+   - braucht Abstimmung mit Refactoring
+   - braucht Abstimmung mit Design / UX
+   - hoher Impact / riskant
+
+Qualitätskriterien für den Review:
+- Auth- und Berechtigungsgrenzen
+- Validierungs- und Sanitization-Lücken
+- unsicheres Vertrauen in Client-Input
+- Secret-Handling und versehentliche Offenlegung
+- unsichere Defaults oder gefährliche Annahmen
+- Session-, Token- und Cookie-Probleme
+- riskantes Error-Leakage
+- unsichere API- oder Action-Patterns
+- privilegierte Pfade ohne ausreichende Guards
+- offensichtliche Risiken für Datenexposition
+
+Output-Anforderungen:
+- defensiv und auf hoher Ebene bleiben
+- konkret benennen, wo das Problem liegt
+- nach Schweregrad und Wahrscheinlichkeit priorisieren
+- wahrscheinliche echte Risiken von spekulativen Bedenken trennen
+- explizit markieren, wo spätere Fixes architektonische Abstimmung brauchen
+
+Finale Anweisung:
+Spawne Subagents für den Review, konsolidiere danach alle Findings und gib nur den Review-Bericht mit Priorisierung zurück. Nichts implementieren.

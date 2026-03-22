@@ -1,0 +1,65 @@
+Spawne dedizierte Subagents für einen reinen Refactoring- und Code-Quality-Review dieser Codebasis.
+
+Ziel:
+Führe zuerst nur eine Analyse durch. In dieser Phase geht es ausschliesslich um strukturelle Bewertung, Priorisierung und saubere Aufbereitung der Findings. Es darf noch nichts implementiert, refactored oder gefixt werden.
+
+Vorgehen:
+- Spawne Subagents, wenn es sinnvoll ist, um die Codebasis parallel zu prüfen.
+- Teile den Review bei Bedarf in sinnvolle Bereiche auf, zum Beispiel Architektur, Module, Shared Utilities, State-Handling, Datenfluss, Services oder besonders komplexe Dateien.
+- Lass alle Subagents nur lesen, prüfen und dokumentieren.
+- Konsolidiere die Resultate danach in einen einzigen Gesamtbericht.
+- Fasse doppelte oder eng verwandte Findings zusammen.
+
+Scope:
+- Architektur und Code-Organisation
+- Duplikation und wiederholte Muster
+- Naming und Verantwortlichkeiten
+- Qualität von Abstraktionen
+- Typensicherheit und Interface-Konsistenz
+- Modulgrenzen und Separation of Concerns
+- Datenfluss, State-Handling, Services, Utilities
+- Wartbarkeit und zukünftige Änderbarkeit
+- unnötige Komplexität
+
+Wichtige Regeln:
+- Nur Review.
+- Keinen Code ändern.
+- Keine Dateien erstellen.
+- Nichts refactoren.
+- Nichts fixen.
+- Keine Module umschreiben.
+- Keine direkte Umsetzung in dieser Phase.
+
+Der konsolidierte Bericht muss enthalten:
+1. Kurze Zusammenfassung
+2. Wichtigste strukturelle Probleme nach Priorität
+3. Betroffene Dateien, Module, Funktionen oder Bereiche
+4. Warum jedes Problem technisch relevant ist
+5. Empfohlene Refactoring-Richtung auf hoher Ebene
+6. Einordnung jedes Findings in:
+   - sicher sofort umsetzbar
+   - braucht Abstimmung mit Design
+   - braucht Abstimmung mit Security
+   - hoher Impact / riskant
+
+Qualitätskriterien für den Review:
+- Duplikation und wiederholte Patterns
+- schlechte Trennung von Verantwortlichkeiten
+- übergrosse Dateien oder Funktionen
+- unklare Benennung und verwirrende Zuständigkeiten
+- schwache oder inkonsistente Abstraktionen
+- fragiler Datenfluss
+- fehlende Zentralisierung oder Shared Utilities
+- Wartbarkeit und Kosten späterer Änderungen
+- unnötige Komplexität
+- Typ- und Interface-Konsistenz
+
+Output-Anforderungen:
+- konkret und dateispezifisch
+- lieber umsetzungsnahe strukturelle Findings als Stil-Nitpicks
+- zusammengehörige Findings gruppieren, wenn sie auf dasselbe Architekturproblem zeigen
+- Low-Risk-Cleanup von tieferen Architekturproblemen trennen
+- Bereiche explizit markieren, die wahrscheinlich mit UI- oder Security-Arbeit kollidieren
+
+Finale Anweisung:
+Spawne Subagents für den Review, konsolidiere danach alle Findings und gib nur den Review-Bericht mit Priorisierung zurück. Nichts implementieren.

@@ -1,0 +1,66 @@
+Spawn dedicated subagents for a pure security review of this codebase.
+
+Goal:
+Run analysis only at first. In this phase, the work is exclusively about security-relevant evaluation, prioritization, and structured documentation of findings. Nothing may be implemented, hardened, or fixed yet.
+
+Approach:
+- Spawn subagents where useful to review security-relevant areas in parallel.
+- Split the review into sensible areas when needed, for example auth, session handling, input validation, API boundaries, privileged actions, secret handling, or error handling.
+- Have all subagents only read, inspect, and document.
+- Consolidate the results afterwards into one overall report.
+- Merge duplicate findings and related risks.
+
+Scope:
+- authentication and authorization
+- input handling, validation, and sanitization
+- secret handling and accidental exposure
+- API boundaries and server-side enforcement
+- session, token, and cookie handling
+- dangerous client assumptions
+- error handling and leakage
+- storage and request behavior
+- privileged actions and guards
+- obvious data exposure or insecure defaults
+
+Important rules:
+- Review only.
+- Do not change code.
+- Do not create files.
+- Do not fix anything.
+- Do not harden anything.
+- Do not produce exploit instructions.
+- No direct implementation in this phase.
+
+The consolidated report must include:
+1. a short summary
+2. the most important security findings by priority or severity
+3. affected files, routes, modules, or areas
+4. why each issue matters
+5. a recommended high-level remediation direction
+6. a classification of each finding as:
+   - safe to implement immediately
+   - requires coordination with Refactoring
+   - requires coordination with Design / UX
+   - high impact / risky
+
+Quality criteria for the review:
+- auth and permission boundaries
+- validation and sanitization gaps
+- unsafe trust in client input
+- secret handling and accidental disclosure
+- insecure defaults or dangerous assumptions
+- session, token, and cookie issues
+- risky error leakage
+- unsafe API or action patterns
+- privileged paths without sufficient guards
+- obvious data-exposure risks
+
+Output requirements:
+- stay defensive and high-level
+- name clearly where the problem sits
+- prioritize by severity and likelihood
+- separate likely real risks from speculative concerns
+- explicitly mark where later fixes need architectural coordination
+
+Final instruction:
+Spawn subagents for the review, then consolidate all findings and return only the prioritized review report. Do not implement anything.

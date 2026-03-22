@@ -1,0 +1,64 @@
+Spawn dedicated subagents for a pure accessibility review of this app.
+
+Goal:
+Run analysis only at first. In this phase, the work is exclusively about evaluation, prioritization, and structured preparation of accessibility findings. Nothing may be implemented, corrected, or rebuilt yet.
+
+Approach:
+- Spawn subagents where useful to review different accessibility areas in parallel.
+- Split the review into sensible areas when needed, for example keyboard navigation, focus management, forms, dialogs, tables, semantic structure, dynamic states, contrast, or responsive readability.
+- Have all subagents only read, inspect, and document.
+- Consolidate the results afterwards into one clean overall report.
+- Remove duplicate findings and merge overlaps.
+
+Scope:
+- keyboard navigation and focus order
+- visible focus states
+- semantic structure and the interaction elements being used
+- forms, labels, help text, and error messages
+- dialogs, menus, tabs, drawers, and other dynamic UI
+- tables, filters, sorting, and data-rich views
+- contrast, zoom behavior, and readability
+- status messages, loading, success, and error states
+- meaning that is conveyed only through color, position, or hover
+- fit between the visual UI and actual accessibility
+
+Important rules:
+- Review only.
+- Do not rebuild anything.
+- Do not change styles.
+- Do not replace components.
+- Do not create or delete files.
+- No generic platitudes; make concrete observations.
+- Do not invent behavior when semantics, focus handling, or screen-reader behavior are unclear.
+
+The consolidated report must include:
+1. a short summary
+2. the most important accessibility issues by priority
+3. affected pages, components, states, or interaction patterns
+4. why each issue matters
+5. a recommended direction for later accessibility improvement
+6. a classification of each finding as:
+   - safe to implement immediately
+   - requires coordination with Design / UX
+   - requires coordination with Refactoring
+   - requires coordination with Documentation
+   - high impact / risky
+
+Quality criteria for the review:
+- keyboard usability
+- focus management and visibility
+- semantics and structure
+- form clarity
+- accessibility of dynamic components
+- contrast and readability
+- robustness under zoom and dense usage
+- distinction between cosmetic issues and real usability barriers
+
+Output requirements:
+- concrete and component-specific
+- prefer a few strong findings over a lot of generic text
+- clearly separate real usability problems from purely visual fine points
+- explicitly mark where accessibility issues stem from design, structure, or component decisions
+
+Final instruction:
+Spawn subagents for the review, then consolidate all findings and return only the prioritized review report. Do not implement anything, do not rebuild anything, do not style anything.

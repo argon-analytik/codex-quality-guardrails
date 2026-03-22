@@ -1,0 +1,63 @@
+Lies und befolge REFACTORING_GUARDRAILS.md vor allen Änderungen.
+
+Berücksichtige zusätzlich die Findings aus dem zuvor ausgeführten Spawn-Review. Behandle den Spawn-Review-Bericht als priorisierte Voranalyse:
+- validiere die dort genannten Findings am aktuellen Stand
+- setze bestätigte strukturelle Probleme in diesem Pass um
+- ergänze eigene zusätzliche Findings, wenn du weitere technische Probleme findest
+- übernimm Spawn-Findings nicht blind, sondern prüfe sie gegen die tatsächliche Codebasis
+
+Aufgabe:
+Führe einen technischen Refactoring-Pass auf dieser App bzw. diesem Codebestand aus. Kein unnötiges Redesign, keine Architekturshow.
+
+Ziel:
+Die Codebasis soll klarer, wartbarer, robuster und konsistenter werden. Reduziere Komplexität, entkopple vermischte Zuständigkeiten, konsolidiere Duplikate und verbessere Benennung, Struktur, Fehlerbehandlung und Testbarkeit dort, wo es sinnvoll ist.
+
+Scope:
+- prüfe relevante Module, Komponenten, Services, Routen, Handler, Hilfsfunktionen, Datenmodelle und Integrationsstellen
+- berücksichtige und validiere die priorisierten Findings aus dem ersten Spawn-Review
+- identifiziere zusätzlich strukturelle Probleme, doppelte Logik, unklare Zuständigkeiten und unnötige Komplexität
+- behebe die Probleme direkt im Code
+- verbessere Shared Utilities, Typen, Abstraktionen und Schnittstellen nur dort, wo es echten Nutzen gibt
+- erhalte das bestehende Verhalten, ausser wenn ein Verhalten klar fehlerhaft ist
+
+Priorität:
+1. klar problematische Struktur und vermischte Verantwortlichkeiten beheben
+2. bestätigte High-Priority-Findings aus dem Spawn-Review umsetzen
+3. doppelte oder fast doppelte Logik konsolidieren
+4. Benennung und Schnittstellen präzisieren
+5. Fehlerbehandlung und Datenflüsse klarer machen
+6. testkritische Bereiche absichern oder testbarer machen
+
+Wichtig:
+- nicht nur analysieren, sondern umsetzen
+- Spawn-Review-Findings als Input verwenden, aber gegen die reale Codebasis validieren
+- keine neuen Schichten einführen, wenn sie keinen klaren Nutzen bringen
+- keine künstlichen Abstraktionen bauen
+- keine grossflächigen Umschreibungen ohne klaren Return
+- keine stillen Verhaltensänderungen
+- wenn Shared Logic mehrfach vorkommt, an der richtigen Stelle konsolidieren
+- wenn ein Refactor riskant ist, Verhalten gezielt verifizieren
+
+Achte besonders auf:
+- übergrosse Dateien oder Funktionen
+- Controller, Handler oder Komponenten mit zu vielen Aufgaben
+- Copy-Paste mit leichten Variationen
+- kryptische Namen
+- magische Konstanten
+- verschachtelte Bedingungen
+- unklare Seiteneffekte
+- uneinheitliche Validierung
+- unklare Fehlerpfade
+- inkonsistente Typen oder Datenmodelle
+- unlogische Ordner- und Modulstruktur
+- unnötige Re-Renders, redundante Requests oder unnötige Mapping-Ketten
+
+Gib am Ende aus:
+- kurze Analyse der Hauptprobleme
+- welche Spawn-Review-Findings bestätigt wurden
+- welche davon direkt refaktoriert wurden
+- welche Spawn-Review-Findings verworfen, angepasst oder vertagt wurden
+- geänderte Dateien und Module
+- was strukturell verbessert wurde
+- welche Duplikate oder Komplexitäten reduziert wurden
+- welche Risiken, Restprobleme oder Folgearbeiten bleiben

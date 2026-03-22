@@ -1,0 +1,61 @@
+Spawn dedicated subagents for a pure design and UX review of this codebase.
+
+Goal:
+Run analysis only at first. In this phase, the work is exclusively about review, prioritization, and structuring of findings. Nothing may be implemented, refactored, or fixed yet.
+
+Approach:
+- Spawn subagents where useful to review the UI in parallel.
+- Split the review into sensible areas when needed, for example pages, routes, shared components, responsiveness, form flows, or visual consistency.
+- Have all subagents only read, inspect, and document.
+- Consolidate the results afterwards into one clean overall report.
+- Remove duplicate findings and merge overlaps.
+
+Scope:
+- the current UI and UX of the existing implementation
+- layout, visual consistency, hierarchy, spacing, alignment
+- component coherence and reuse
+- styling system, tokens, variants, states
+- responsiveness and basic accessibility
+- forms, interaction patterns, feedback, and clarity
+- the overall polish of the product
+
+Important rules:
+- Review only.
+- Do not change code.
+- Do not create files.
+- Do not refactor anything.
+- Do not fix anything.
+- No direct implementation in this phase.
+- No vague platitudes; make concrete observations.
+
+The consolidated report must include:
+1. a short summary
+2. the most important design and UX issues by priority
+3. affected files, components, views, or routes
+4. why each issue matters
+5. a recommended direction for later improvement
+6. a classification of each finding as:
+   - safe to implement immediately
+   - requires coordination with Refactoring
+   - requires coordination with Security
+   - high impact / risky
+
+Quality criteria for the review:
+- visual consistency
+- spacing, hierarchy, alignment
+- typography and readability
+- reuse instead of UI duplication
+- responsive behavior
+- clarity of states and feedback
+- form usability
+- accessibility basics
+- overall quality and product readiness
+
+Output requirements:
+- concrete and file- or component-specific
+- prefer a few strong findings over a lot of generic text
+- separate cosmetic issues from structural design problems
+- explicitly mark overlaps with shared components or design-system-like issues
+
+Final instruction:
+Spawn subagents for the review, then consolidate all findings and return only the prioritized review report. Do not implement anything.

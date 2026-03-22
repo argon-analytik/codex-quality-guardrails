@@ -1,0 +1,68 @@
+Spawn dedicated subagents for a pure documentation review of this codebase.
+
+Goal:
+Run analysis only at first. In this phase, the work is exclusively about evaluation, prioritization, and structured preparation of documentation findings. Nothing may be created, rewritten, extended, or corrected yet.
+
+Approach:
+- Spawn subagents where useful to review the documentation in parallel.
+- Split the review into sensible areas when needed, for example README, setup, architecture, runbooks, API documentation, ENV/configuration documentation, in-code documentation, or operational workflows.
+- Have all subagents only read, inspect, and document.
+- Consolidate the results afterwards into one clean overall report.
+- Remove duplicate findings and merge overlaps.
+
+Scope:
+- README and entry point
+- setup, build, run, and deploy documentation
+- architecture and system overview
+- ENV, configuration, and integration documentation
+- API, event, job, webhook, or interface documentation
+- runbooks, operational knowledge, backup/restore, troubleshooting
+- auth, roles, security assumptions, and operational assumptions
+- in-code documentation, comments, and areas that require explanation
+- change notes, migration notes, or breaking-change notes
+- fit between documentation and actual implementation
+
+Important rules:
+- Review only.
+- Do not change documentation.
+- Do not create files.
+- Do not rewrite anything.
+- Do not add anything.
+- Do not delete anything.
+- No direct implementation in this phase.
+- No generic platitudes; make concrete observations.
+- Do not invent facts when something is unclear or undocumented.
+
+The consolidated report must include:
+1. a short summary
+2. the most important documentation problems and gaps by priority
+3. affected documents, files, modules, areas, or topics
+4. why each issue matters
+5. a recommended direction for later documentation improvement
+6. a classification of each finding as:
+   - safe to implement immediately
+   - requires coordination with Refactoring
+   - requires coordination with Security
+   - requires coordination with Design / UX
+   - high impact / risky
+
+Quality criteria for the review:
+- freshness and truthfulness
+- completeness for setup, operations, and handover
+- clarity of architecture, responsibilities, and data flows
+- traceability of configuration and integrations
+- documentation of roles, auth, and security assumptions
+- quality of runbooks, troubleshooting, and recovery notes
+- visibility of boundaries, risks, assumptions, and known restrictions
+- consistency between code and documentation
+- structure, discoverability, and maintainability of the documentation
+
+Output requirements:
+- concrete and document- or area-specific
+- prefer a few strong findings over a lot of generic text
+- clearly separate missing documentation from outdated or misleading documentation
+- separate operational gaps from purely cosmetic documentation issues
+- explicitly mark where documentation problems stem from architecture, security, or design issues
+
+Final instruction:
+Spawn subagents for the review, then consolidate all findings and return only the prioritized review report. Do not implement anything and do not document anything.

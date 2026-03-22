@@ -1,0 +1,65 @@
+Spawn dedicated subagents for a pure refactoring and code-quality review of this codebase.
+
+Goal:
+Run analysis only at first. In this phase, the work is exclusively about structural evaluation, prioritization, and clean preparation of findings. Nothing may be implemented, refactored, or fixed yet.
+
+Approach:
+- Spawn subagents where useful to review the codebase in parallel.
+- Split the review into sensible areas when needed, for example architecture, modules, shared utilities, state handling, data flow, services, or especially complex files.
+- Have all subagents only read, inspect, and document.
+- Consolidate the results afterwards into one overall report.
+- Merge duplicate or closely related findings.
+
+Scope:
+- architecture and code organization
+- duplication and repeated patterns
+- naming and responsibilities
+- quality of abstractions
+- type safety and interface consistency
+- module boundaries and separation of concerns
+- data flow, state handling, services, utilities
+- maintainability and future changeability
+- unnecessary complexity
+
+Important rules:
+- Review only.
+- Do not change code.
+- Do not create files.
+- Do not refactor anything.
+- Do not fix anything.
+- Do not rewrite modules.
+- No direct implementation in this phase.
+
+The consolidated report must include:
+1. a short summary
+2. the most important structural problems by priority
+3. affected files, modules, functions, or areas
+4. why each issue is technically relevant
+5. a recommended high-level refactoring direction
+6. a classification of each finding as:
+   - safe to implement immediately
+   - requires coordination with Design
+   - requires coordination with Security
+   - high impact / risky
+
+Quality criteria for the review:
+- duplication and repeated patterns
+- poor separation of responsibilities
+- oversized files or functions
+- unclear naming and confusing ownership
+- weak or inconsistent abstractions
+- fragile data flow
+- missing centralization or shared utilities
+- maintainability and the cost of later changes
+- unnecessary complexity
+- type and interface consistency
+
+Output requirements:
+- concrete and file-specific
+- prefer structural findings that are close to implementation over stylistic nitpicks
+- group related findings when they point to the same architecture problem
+- separate low-risk cleanup from deeper architecture issues
+- explicitly mark areas likely to collide with UI or security work
+
+Final instruction:
+Spawn subagents for the review, then consolidate all findings and return only the prioritized review report. Do not implement anything.

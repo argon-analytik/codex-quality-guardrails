@@ -1,0 +1,64 @@
+Spawne dedizierte Subagents für einen reinen Testing- und Verifikations-Review dieser Codebasis.
+
+Ziel:
+Führe zuerst nur eine Analyse durch. In dieser Phase geht es ausschliesslich um Bewertung, Priorisierung und strukturierte Aufbereitung von Testing-Findings und Verifikationslücken. Es darf noch nichts implementiert, ergänzt, umgebaut oder gelöscht werden.
+
+Vorgehen:
+- Spawne Subagents, wenn es sinnvoll ist, um verschiedene Risikobereiche parallel zu prüfen.
+- Teile den Review bei Bedarf in sinnvolle Bereiche auf, zum Beispiel Businesslogik, Auth/Berechtigungen, kritische Nutzerflüsse, Integrationen, Jobs, Exporte, Fehlerpfade oder Regression-Risiken.
+- Lass alle Subagents nur lesen, prüfen und dokumentieren.
+- Konsolidiere die Resultate danach in einen einzigen sauberen Gesamtbericht.
+- Entferne doppelte Findings und fasse Überschneidungen zusammen.
+
+Scope:
+- bestehende Testabdeckung und erkennbare Lücken
+- kritische Businesslogik und Zustandsübergänge
+- Berechtigungs- und Ownership-Grenzen
+- Integrationen, Webhooks, Jobs, Queues und Scheduler
+- Importe, Exporte, PDF-, Mail- oder Archivierungsflüsse
+- Fehlerpfade, Randfälle und partielle Ausfälle
+- Regressionsrisiken bei komplexen oder fragilen Bereichen
+- Passung zwischen Risiko und vorhandener Verifikation
+- Bereiche, die manuell statt automatisiert geprüft werden sollten
+- Bereiche, die automatisiert statt nur manuell geprüft werden sollten
+
+Wichtige Regeln:
+- Nur Review.
+- Keine Tests schreiben.
+- Keine Produktionslogik ändern.
+- Keine Dateien erstellen oder löschen.
+- Nichts umstrukturieren.
+- Keine generischen Allgemeinplätze, sondern konkrete Beobachtungen.
+- Nichts erfinden, wenn Testabdeckung oder Verhalten unklar ist.
+
+Der konsolidierte Bericht muss enthalten:
+1. Kurze Zusammenfassung
+2. Wichtigste Testing-Lücken und Verifikationsrisiken nach Priorität
+3. Betroffene Dateien, Module, Flows, Schnittstellen oder Zustände
+4. Warum jedes Problem relevant ist
+5. Empfohlene Richtung für spätere Testing- oder Verifikationsverbesserung
+6. Einordnung jedes Findings in:
+   - sicher sofort umsetzbar
+   - braucht Abstimmung mit Refactoring
+   - braucht Abstimmung mit Security
+   - braucht Abstimmung mit Design / UX
+   - hoher Impact / riskant
+
+Qualitätskriterien für den Review:
+- Risikoangemessenheit der vorhandenen Tests
+- Abdeckung kritischer Businesslogik
+- Absicherung von Fehlerpfaden und Randfällen
+- Trennung zwischen Unit-, Integrations-, E2E- und manuellen Checks
+- Regressionssicherheit bei komplexen Bereichen
+- Nachvollziehbarkeit und Wartbarkeit der bestehenden Tests
+- Relevanz statt blosser Testmenge
+
+Output-Anforderungen:
+- konkret und risikoorientiert
+- lieber wenige starke Findings als viel generischer Text
+- fehlende Tests klar von ungeeigneten oder fragilen Tests trennen
+- operative Release-Risiken klar von rein lokaler Testschwäche trennen
+- explizit markieren, wo Testing-Probleme aus Architektur-, Security- oder Design-Themen entstehen
+
+Finale Anweisung:
+Spawne Subagents für den Review, konsolidiere danach alle Findings und gib nur den Review-Bericht mit Priorisierung zurück. Nichts implementieren, nichts testen, nichts umbauen.

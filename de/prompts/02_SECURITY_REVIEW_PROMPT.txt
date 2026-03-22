@@ -1,0 +1,48 @@
+Lies und befolge SECURITY_GUARDRAILS.md und SECURITY_PROFILE_MATRIX.md vor allen Änderungen.
+
+Berücksichtige zusätzlich die Findings aus dem zuvor ausgeführten Spawn-Review. Behandle den Spawn-Review-Bericht als priorisierte Voranalyse:
+- validiere die dort genannten Findings am aktuellen Stand
+- behebe bestätigte Risiken in diesem Pass, soweit sinnvoll und verhältnismässig
+- ergänze eigene zusätzliche Findings, wenn du weitere Risiken findest
+- übernimm Spawn-Findings nicht blind, sondern prüfe sie gegen die tatsächliche Implementierung und das reale Risikoprofil
+
+Aufgabe:
+Führe einen vollständigen, risikobasierten Security-Review dieser App aus. Nicht dogmatisch, sondern pragmatisch.
+
+Ziel:
+- reale Sicherheitsrisiken erkennen
+- klassische und moderne Schwachstellen abklopfen
+- Sicherheitsmassnahmen passend zur App einschätzen
+- unnötige Überkomplexität vermeiden
+- konkrete Probleme direkt beheben, wo sinnvoll
+
+Vorgehen:
+1. Sicherheitsprofil der App bestimmen und als S1, S2 oder S3 einstufen
+2. Trust Boundaries, Datenflüsse, sensible Funktionen und privilegierte Pfade identifizieren
+3. klassische Schwachstellen prüfen, insbesondere Injection, XSS, CSRF, SSRF, Path Traversal, IDOR/BOLA, Auth- und Sessionfehler
+4. moderne Risiken prüfen, insbesondere veraltete Dependencies, Supply-Chain-Risiken, Fehlkonfigurationen, Upload-/PDF-/Export-Pfade, Integrationen, Secrets, Logs und Multi-Tenant-Leaks
+5. bei agentischen oder KI-gestützten Funktionen zusätzlich Tool-Missbrauch, Prompt-Injection, Kontextvergiftung, Rechteeskalation und unsichere Automationspfade prüfen
+6. berücksichtige und validiere die priorisierten Findings aus dem ersten Spawn-Review
+7. Probleme direkt im Code beheben, wo klar sinnvoll und ohne blinden Overkill
+8. Shared Security-Regeln, Middleware, Helper oder Konfigurationen zentralisieren, wenn das die Lösung sauberer macht
+
+Wichtig:
+- nicht nur Probleme beschreiben, sondern beheben, wo möglich
+- Spawn-Review-Findings als Input verwenden, aber gegen Implementierung und Risikoprofil validieren
+- keine unnötige Enterprise-Komplexität einführen, wenn das Risiko es nicht rechtfertigt
+- keine Security-Theater-Massnahmen
+- keine Secrets im Code, Frontend, Logs oder Testdaten belassen
+- Autorisierung immer serverseitig prüfen
+- sichtbare Korrekturen dokumentieren
+- verbleibende Risiken ehrlich benennen
+
+Gib am Ende aus:
+- Sicherheitsstufe S1, S2 oder S3 mit kurzer Begründung
+- welche Spawn-Review-Findings bestätigt wurden
+- welche davon direkt behoben oder mitigiert wurden
+- welche Spawn-Review-Findings verworfen, angepasst oder vertagt wurden
+- wichtigste Risiken nach Priorität
+- konkrete Funde
+- was direkt behoben wurde
+- welche Shared Security-Regeln oder Komponenten normalisiert wurden
+- verbleibende Risiken, bewusste Akzeptanzen oder offene Punkte vor Release

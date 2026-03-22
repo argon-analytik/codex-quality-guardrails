@@ -1,0 +1,64 @@
+Spawn dedicated subagents for a pure testing and verification review of this codebase.
+
+Goal:
+Run analysis only at first. In this phase, the work is exclusively about evaluation, prioritization, and structured preparation of testing findings and verification gaps. Nothing may be implemented, extended, rebuilt, or deleted yet.
+
+Approach:
+- Spawn subagents where useful to review different risk areas in parallel.
+- Split the review into sensible areas when needed, for example business logic, auth/permissions, critical user flows, integrations, jobs, exports, error paths, or regression risks.
+- Have all subagents only read, inspect, and document.
+- Consolidate the results afterwards into one clean overall report.
+- Remove duplicate findings and merge overlaps.
+
+Scope:
+- existing test coverage and visible gaps
+- critical business logic and state transitions
+- permission and ownership boundaries
+- integrations, webhooks, jobs, queues, and schedulers
+- import, export, PDF, mail, or archiving flows
+- error paths, edge cases, and partial failures
+- regression risks in complex or fragile areas
+- fit between risk and existing verification
+- areas that should be reviewed manually instead of automated
+- areas that should be automated instead of reviewed only manually
+
+Important rules:
+- Review only.
+- Do not write tests.
+- Do not change production logic.
+- Do not create or delete files.
+- Do not restructure anything.
+- No generic platitudes; make concrete observations.
+- Do not invent behavior when coverage or implementation is unclear.
+
+The consolidated report must include:
+1. a short summary
+2. the most important testing gaps and verification risks by priority
+3. affected files, modules, flows, interfaces, or states
+4. why each issue matters
+5. a recommended direction for later testing or verification improvement
+6. a classification of each finding as:
+   - safe to implement immediately
+   - requires coordination with Refactoring
+   - requires coordination with Security
+   - requires coordination with Design / UX
+   - high impact / risky
+
+Quality criteria for the review:
+- risk-appropriateness of the existing tests
+- coverage of critical business logic
+- protection of error paths and edge cases
+- separation between unit, integration, end-to-end, and manual checks
+- regression safety in complex areas
+- traceability and maintainability of the existing tests
+- relevance rather than sheer test count
+
+Output requirements:
+- concrete and risk-oriented
+- prefer a few strong findings over a lot of generic text
+- clearly separate missing tests from unsuitable or fragile tests
+- separate operational release risk from purely local test weakness
+- explicitly mark where testing problems stem from architecture, security, or design issues
+
+Final instruction:
+Spawn subagents for the review, then consolidate all findings and return only the prioritized review report. Do not implement anything, do not test anything, do not rebuild anything.

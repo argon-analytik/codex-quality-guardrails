@@ -1,0 +1,64 @@
+Spawne dedizierte Subagents für einen reinen Operations- und Release-Review dieser Codebasis bzw. Lösung.
+
+Ziel:
+Führe zuerst nur eine Analyse durch. In dieser Phase geht es ausschliesslich um Bewertung, Priorisierung und strukturierte Aufbereitung von Betriebs-, Deploy-, Migrations- und Release-Findings. Es darf noch nichts implementiert, umgebaut oder ausgerollt werden.
+
+Vorgehen:
+- Spawne Subagents, wenn es sinnvoll ist, um verschiedene Betriebsbereiche parallel zu prüfen.
+- Teile den Review bei Bedarf in sinnvolle Bereiche auf, zum Beispiel Konfiguration, Secrets, Build/Deploy, Migrationen, Jobs/Queues, Integrationen, Logging/Monitoring, Backup/Restore oder Release-Disziplin.
+- Lass alle Subagents nur lesen, prüfen und dokumentieren.
+- Konsolidiere die Resultate danach in einen einzigen sauberen Gesamtbericht.
+- Entferne doppelte Findings und fasse Überschneidungen zusammen.
+
+Scope:
+- Konfigurations- und ENV-Management
+- Secret-Handling
+- Build- und Deploy-Prozess
+- Unterschiede zwischen lokal, staging und produktiv
+- Datenbankmigrationen und Datenintegritätsrisiken
+- Jobs, Queues, Scheduler, Webhooks und Integrationen
+- Logging, Monitoring, Healthchecks und Fehlererkennung
+- Backups, Restore und Recovery-Fähigkeit
+- Runbooks, Betriebswissen und Post-Deploy-Checks
+- Breaking Changes, Release-Risiken und Rollback-Fähigkeit
+
+Wichtige Regeln:
+- Nur Review.
+- Nichts deployen.
+- Keine Konfiguration ändern.
+- Keine Infrastruktur umstellen.
+- Keine Dateien erstellen oder löschen.
+- Keine generischen Allgemeinplätze, sondern konkrete Beobachtungen.
+- Nichts erfinden, wenn Betriebsmechanismen fehlen oder unklar sind.
+
+Der konsolidierte Bericht muss enthalten:
+1. Kurze Zusammenfassung
+2. Wichtigste Operations- und Release-Risiken nach Priorität
+3. Betroffene Dateien, Prozesse, Integrationen, Datenflüsse oder Betriebsbereiche
+4. Warum jedes Problem relevant ist
+5. Empfohlene Richtung für spätere betriebliche oder Release-seitige Verbesserung
+6. Einordnung jedes Findings in:
+   - sicher sofort umsetzbar
+   - braucht Abstimmung mit Refactoring
+   - braucht Abstimmung mit Security
+   - braucht Abstimmung mit Dokumentation
+   - hoher Impact / riskant
+
+Qualitätskriterien für den Review:
+- Reproduzierbarkeit des Betriebs
+- Sichtbarkeit von Fehlern und stillen Teil-Ausfällen
+- Umgang mit Migrationen und Datenrisiken
+- Qualität von Konfiguration, Secrets und Environment-Trennung
+- Beobachtbarkeit und Recovery-Fähigkeit
+- Realismus von Release- und Rollback-Annahmen
+- Verhältnismässigkeit der vorhandenen Betriebsdisziplin
+
+Output-Anforderungen:
+- konkret und betriebsrelevant
+- lieber wenige starke Findings als viel generischer Text
+- fehlende Betriebsmechanismen klar von schwach ausgeprägten Mechanismen trennen
+- lokale Dev-Bequemlichkeit klar von produktivem Risiko unterscheiden
+- explizit markieren, wo Operations-Probleme aus Architektur-, Security- oder Dokumentationslücken entstehen
+
+Finale Anweisung:
+Spawne Subagents für den Review, konsolidiere danach alle Findings und gib nur den Review-Bericht mit Priorisierung zurück. Nichts implementieren, nichts deployen, nichts verändern.

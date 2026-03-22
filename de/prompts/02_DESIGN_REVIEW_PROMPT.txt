@@ -1,0 +1,45 @@
+Lies und befolge DESIGN_GUARDRAILS.md und COPY_GUARDRAILS.md vor allen Änderungen.
+
+Berücksichtige zusätzlich die Findings aus dem zuvor ausgeführten Spawn-Review. Behandle den Spawn-Review-Bericht als priorisierte Voranalyse:
+- validiere die dort genannten Findings am aktuellen Stand
+- behebe bestätigte Punkte direkt in diesem Pass
+- ergänze eigene zusätzliche Findings, wenn du weitere Probleme findest
+- übernimm Spawn-Findings nicht blind, sondern prüfe sie gegen die tatsächliche Implementierung
+
+Aufgabe:
+Führe einen vollständigen UI/UX-Polishing-Pass auf dieser App aus. Kein Redesign.
+
+Scope:
+- prüfe im Browser alle relevanten Seiten, Dialoge, Sidebars, Split-Views, Formulare, Tabellen, Karten, Detailansichten und Portal-Views
+- berücksichtige und validiere die priorisierten Findings aus dem ersten Spawn-Review
+- identifiziere zusätzlich visuelle, typografische, räumliche und interaktive Inkonsistenzen
+- behebe die Probleme direkt im Code
+- normalisiere Shared Components, Tokens und Layout-Regeln dort, wo es sinnvoll ist
+- behalte die bestehende Produktsprache bei, mache sie aber ruhiger, sauberer, konsistenter und produktionsreifer
+
+Priorität:
+1. klar kaputte oder sichtbar fehlerhafte UI beheben
+2. bestätigte High-Priority-Findings aus dem Spawn-Review umsetzen
+3. visuelle Überladung reduzieren
+4. Hierarchie, Abstände und Typografie vereinheitlichen
+5. Formulare und Action-Bereiche lesbarer und effizienter machen
+6. responsives Verhalten und Scrollverhalten prüfen und korrigieren
+
+Wichtig:
+- Probleme nicht nur auflisten, sondern beheben
+- Spawn-Review-Findings als Input verwenden, aber gegen die reale UI validieren
+- keine neue Designsprache einführen
+- keine unnötigen neuen Panels oder Boxen hinzufügen
+- keine Einzelfall-CSS-Hacks, wenn das Problem in Shared Components oder Tokens gelöst werden sollte
+- Icon-only-Buttons für offensichtliche Aktionen verwenden, wenn Platz knapp ist, aber nur mit Tooltip und aria-label
+- Funktionalität erhalten
+- sichtbarer deutscher Text muss korrekte Umlaute, Schweizer Rechtschreibung und Schweizer Typografie verwenden
+
+Gib am Ende aus:
+- kurze Audit-Zusammenfassung
+- welche Spawn-Review-Findings bestätigt wurden
+- welche davon direkt umgesetzt wurden
+- welche Spawn-Review-Findings verworfen, angepasst oder vertagt wurden
+- geänderte Dateien und Komponenten
+- normalisierte Shared Rules, Tokens oder Components
+- verbleibende Probleme oder Blocker

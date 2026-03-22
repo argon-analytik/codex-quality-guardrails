@@ -1,0 +1,48 @@
+Read and follow `SECURITY_GUARDRAILS.md` and `SECURITY_PROFILE_MATRIX.md` before making any changes.
+
+Also take the findings from the previously executed spawn review into account. Treat the spawn review report as prioritized pre-analysis:
+- validate the reported findings against the current state
+- fix confirmed risks in this pass where sensible and proportional
+- add your own additional findings if you discover more risks
+- do not adopt spawn findings blindly; check them against the actual implementation and real risk profile
+
+Task:
+Perform a complete, risk-based security review of this app. Not dogmatic, but pragmatic.
+
+Goal:
+- identify real security risks
+- probe classic and modern vulnerabilities
+- assess security measures in proportion to the app
+- avoid unnecessary overcomplexity
+- fix concrete problems directly where sensible
+
+Approach:
+1. determine the app's security profile and classify it as S1, S2, or S3
+2. identify trust boundaries, data flows, sensitive functions, and privileged paths
+3. check classic weaknesses, especially injection, XSS, CSRF, SSRF, path traversal, IDOR/BOLA, auth flaws, and session flaws
+4. check modern risks, especially outdated dependencies, supply-chain risk, misconfiguration, upload/PDF/export paths, integrations, secrets, logs, and multi-tenant leaks
+5. for agentic or AI-supported features, additionally check tool abuse, prompt injection, context poisoning, privilege escalation, and unsafe automation paths
+6. incorporate and validate the prioritized findings from the initial spawn review
+7. fix problems directly in code where the fix is clearly sensible and not blind overkill
+8. centralize shared security rules, middleware, helpers, or configurations when that makes the solution cleaner
+
+Important:
+- do not just describe problems; fix them where possible
+- use spawn-review findings as input, but validate them against implementation and risk profile
+- do not introduce unnecessary enterprise complexity when the risk does not justify it
+- no security theater
+- do not leave secrets in code, frontend, logs, or test data
+- always enforce authorization on the server side
+- document visible corrections
+- name remaining risks honestly
+
+At the end, report:
+- the security level S1, S2, or S3 with a short justification
+- which spawn-review findings were confirmed
+- which of those were fixed or mitigated directly
+- which spawn-review findings were rejected, adjusted, or postponed
+- the most important risks by priority
+- concrete findings
+- what was fixed directly
+- which shared security rules or components were normalized
+- remaining risks, conscious acceptances, or open points before release

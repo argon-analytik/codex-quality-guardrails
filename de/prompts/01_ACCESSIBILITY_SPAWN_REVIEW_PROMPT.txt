@@ -1,0 +1,64 @@
+Spawne dedizierte Subagents für einen reinen Accessibility-Review dieser App.
+
+Ziel:
+Führe zuerst nur eine Analyse durch. In dieser Phase geht es ausschliesslich um Bewertung, Priorisierung und strukturierte Aufbereitung von Accessibility-Findings. Es darf noch nichts implementiert, korrigiert oder umgebaut werden.
+
+Vorgehen:
+- Spawne Subagents, wenn es sinnvoll ist, um verschiedene Accessibility-Bereiche parallel zu prüfen.
+- Teile den Review bei Bedarf in sinnvolle Bereiche auf, zum Beispiel Tastaturnavigation, Fokusmanagement, Formulare, Dialoge, Tabellen, semantische Struktur, dynamische Zustände, Kontrast oder responsive Lesbarkeit.
+- Lass alle Subagents nur lesen, prüfen und dokumentieren.
+- Konsolidiere die Resultate danach in einen einzigen sauberen Gesamtbericht.
+- Entferne doppelte Findings und fasse Überschneidungen zusammen.
+
+Scope:
+- Tastaturnavigation und Fokus-Reihenfolge
+- sichtbare Fokuszustände
+- semantische Struktur und verwendete Interaktionselemente
+- Formulare, Labels, Hilfstexte und Fehlermeldungen
+- Dialoge, Menüs, Tabs, Drawers und andere dynamische UI
+- Tabellen, Filter, Sortierung und datenreiche Ansichten
+- Kontrast, Zoom-Verhalten und Lesbarkeit
+- Statusmeldungen, Loading-, Success- und Error-Zustände
+- Bedeutung, die nur über Farbe, Position oder Hover vermittelt wird
+- Passung zwischen visueller UI und tatsächlicher Zugänglichkeit
+
+Wichtige Regeln:
+- Nur Review.
+- Nichts umbauen.
+- Keine Styles ändern.
+- Keine Komponenten austauschen.
+- Keine Dateien erstellen oder löschen.
+- Keine generischen Allgemeinplätze, sondern konkrete Beobachtungen.
+- Nichts erfinden, wenn Semantik, Fokusverhalten oder Screenreader-Verhalten unklar ist.
+
+Der konsolidierte Bericht muss enthalten:
+1. Kurze Zusammenfassung
+2. Wichtigste Accessibility-Probleme nach Priorität
+3. Betroffene Seiten, Komponenten, States oder Interaktionsmuster
+4. Warum jedes Problem relevant ist
+5. Empfohlene Richtung für spätere Accessibility-Verbesserung
+6. Einordnung jedes Findings in:
+   - sicher sofort umsetzbar
+   - braucht Abstimmung mit Design / UX
+   - braucht Abstimmung mit Refactoring
+   - braucht Abstimmung mit Dokumentation
+   - hoher Impact / riskant
+
+Qualitätskriterien für den Review:
+- Tastatur-Nutzbarkeit
+- Fokusführung und Sichtbarkeit
+- Semantik und Struktur
+- Formularverständlichkeit
+- Zugänglichkeit dynamischer Komponenten
+- Kontrast und Lesbarkeit
+- Robustheit bei Zoom und dichter Nutzung
+- Trennung zwischen kosmetischem und echterm Bedienbarkeitsproblem
+
+Output-Anforderungen:
+- konkret und komponentenspezifisch
+- lieber wenige starke Findings als viel generischer Text
+- echte Bedienbarkeitsprobleme klar von rein visuellen Feinheiten trennen
+- explizit markieren, wo Accessibility-Probleme aus Design-, Struktur- oder Komponentenentscheidungen entstehen
+
+Finale Anweisung:
+Spawne Subagents für den Review, konsolidiere danach alle Findings und gib nur den Review-Bericht mit Priorisierung zurück. Nichts implementieren, nichts umbauen, nichts stylen.

@@ -1,0 +1,68 @@
+Spawne dedizierte Subagents für einen reinen Dokumentations-Review dieser Codebasis.
+
+Ziel:
+Führe zuerst nur eine Analyse durch. In dieser Phase geht es ausschliesslich um Bewertung, Priorisierung und strukturierte Aufbereitung von Dokumentations-Findings. Es darf noch nichts erstellt, umgeschrieben, ergänzt oder korrigiert werden.
+
+Vorgehen:
+- Spawne Subagents, wenn es sinnvoll ist, um die Dokumentation parallel zu prüfen.
+- Teile den Review bei Bedarf in sinnvolle Bereiche auf, zum Beispiel README, Setup, Architektur, Runbooks, API-Dokumentation, ENV-/Konfigurationsdokumentation, In-Code-Dokumentation oder betriebliche Abläufe.
+- Lass alle Subagents nur lesen, prüfen und dokumentieren.
+- Konsolidiere die Resultate danach in einen einzigen sauberen Gesamtbericht.
+- Entferne doppelte Findings und fasse Überschneidungen zusammen.
+
+Scope:
+- README und Einstiegspunkt
+- Setup-, Build-, Run- und Deploy-Dokumentation
+- Architektur- und Systemübersicht
+- ENV-, Konfigurations- und Integrationsdokumentation
+- API-, Event-, Job-, Webhook- oder Schnittstellen-Dokumentation
+- Runbooks, Betriebswissen, Backup/Restore, Troubleshooting
+- Auth-, Rollen-, Sicherheits- und Betriebsannahmen
+- In-Code-Dokumentation, Kommentare und erklärungsbedürftige Stellen
+- Änderungs-, Migrations- oder Breaking-Change-Hinweise
+- Passung zwischen Dokumentation und tatsächlicher Implementierung
+
+Wichtige Regeln:
+- Nur Review.
+- Keine Dokumentation ändern.
+- Keine Dateien erstellen.
+- Nichts umschreiben.
+- Nichts ergänzen.
+- Nichts löschen.
+- Keine direkte Umsetzung in dieser Phase.
+- Keine generischen Allgemeinplätze, sondern konkrete Beobachtungen.
+- Nichts erfinden, wenn etwas unklar oder nicht dokumentiert ist.
+
+Der konsolidierte Bericht muss enthalten:
+1. Kurze Zusammenfassung
+2. Wichtigste Dokumentationsprobleme und -lücken nach Priorität
+3. Betroffene Dokumente, Dateien, Module, Bereiche oder Themen
+4. Warum jedes Problem relevant ist
+5. Empfohlene Richtung für spätere Dokumentationsverbesserung
+6. Einordnung jedes Findings in:
+   - sicher sofort umsetzbar
+   - braucht Abstimmung mit Refactoring
+   - braucht Abstimmung mit Security
+   - braucht Abstimmung mit Design / UX
+   - hoher Impact / riskant
+
+Qualitätskriterien für den Review:
+- Aktualität und Wahrheitstreue
+- Vollständigkeit für Setup, Betrieb und Übergabe
+- Klarheit von Architektur, Zuständigkeiten und Datenflüssen
+- Nachvollziehbarkeit von Konfiguration und Integrationen
+- Dokumentation von Rollen, Auth- und Sicherheitsannahmen
+- Qualität von Runbooks, Troubleshooting und Recovery-Hinweisen
+- Sichtbarkeit von Grenzen, Risiken, Annahmen und bekannten Restriktionen
+- Konsistenz zwischen Code und Dokumentation
+- Struktur, Auffindbarkeit und Pflegefähigkeit der Dokumentation
+
+Output-Anforderungen:
+- konkret und dokument- bzw. bereichsspezifisch
+- lieber wenige starke Findings als viel generischer Text
+- fehlende Dokumentation klar von veralteter oder irreführender Dokumentation trennen
+- operative Lücken von rein kosmetischen Doku-Problemen trennen
+- explizit markieren, wo Dokumentationsprobleme aus Architektur-, Security- oder Design-Themen entstehen
+
+Finale Anweisung:
+Spawne Subagents für den Review, konsolidiere danach alle Findings und gib nur den Review-Bericht mit Priorisierung zurück. Nichts implementieren, nichts dokumentieren.

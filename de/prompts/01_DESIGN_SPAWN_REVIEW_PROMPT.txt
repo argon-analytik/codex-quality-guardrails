@@ -1,0 +1,61 @@
+Spawne dedizierte Subagents für einen reinen Design- und UX-Review dieser Codebasis.
+
+Ziel:
+Führe zuerst nur eine Analyse durch. In dieser Phase geht es ausschliesslich um Review, Priorisierung und Strukturierung der Findings. Es darf noch nichts implementiert, refactored oder gefixt werden.
+
+Vorgehen:
+- Spawne Subagents, wenn es sinnvoll ist, um die UI parallel zu prüfen.
+- Teile den Review bei Bedarf in sinnvolle Bereiche auf, zum Beispiel Seiten, Routen, Shared Components, Responsiveness, Form-Flows oder visuelle Konsistenz.
+- Lass alle Subagents nur lesen, prüfen und dokumentieren.
+- Konsolidiere die Resultate danach in einen einzigen sauberen Gesamtbericht.
+- Entferne doppelte Findings und fasse Überschneidungen zusammen.
+
+Scope:
+- aktuelle UI und UX der bestehenden Implementierung
+- Layout, visuelle Konsistenz, Hierarchie, Spacing, Alignment
+- Komponenten-Kohärenz und Wiederverwendung
+- Styling-System, Tokens, Varianten, States
+- Responsiveness und grundlegende Accessibility
+- Formulare, Interaktionsmuster, Feedback und Verständlichkeit
+- Gesamtpolish des Produkts
+
+Wichtige Regeln:
+- Nur Review.
+- Keinen Code ändern.
+- Keine Dateien erstellen.
+- Nichts refactoren.
+- Nichts fixen.
+- Keine direkte Umsetzung in dieser Phase.
+- Keine vagen Allgemeinplätze, sondern konkrete Beobachtungen.
+
+Der konsolidierte Bericht muss enthalten:
+1. Kurze Zusammenfassung
+2. Wichtigste Design-/UX-Probleme nach Priorität
+3. Betroffene Dateien, Komponenten, Views oder Routen
+4. Warum jedes Problem relevant ist
+5. Empfohlene Richtung für spätere Verbesserung
+6. Einordnung jedes Findings in:
+   - sicher sofort umsetzbar
+   - braucht Abstimmung mit Refactoring
+   - braucht Abstimmung mit Security
+   - hoher Impact / riskant
+
+Qualitätskriterien für den Review:
+- visuelle Konsistenz
+- Abstände, Hierarchie, Alignment
+- Typografie und Lesbarkeit
+- Wiederverwendung statt UI-Duplikation
+- responsive Verhalten
+- Klarheit von States und Feedback
+- Form-Usability
+- Accessibility-Basics
+- Gesamtqualität und Produktreife
+
+Output-Anforderungen:
+- konkret und datei- bzw. komponentenspezifisch
+- lieber wenige starke Findings als viel generischer Text
+- kosmetische Probleme von strukturellen Design-Problemen trennen
+- Überschneidungen mit Shared Components oder design-systemartigen Problemen explizit markieren
+
+Finale Anweisung:
+Spawne Subagents für den Review, konsolidiere danach alle Findings und gib nur den Review-Bericht mit Priorisierung zurück. Nichts implementieren.

@@ -1,0 +1,64 @@
+Spawn dedicated subagents for a pure operations and release review of this codebase or solution.
+
+Goal:
+Run analysis only at first. In this phase, the work is exclusively about evaluation, prioritization, and structured preparation of operational, deployment, migration, and release findings. Nothing may be implemented, rebuilt, or rolled out yet.
+
+Approach:
+- Spawn subagents where useful to review different operational areas in parallel.
+- Split the review into sensible areas when needed, for example configuration, secrets, build/deploy, migrations, jobs/queues, integrations, logging/monitoring, backup/restore, or release discipline.
+- Have all subagents only read, inspect, and document.
+- Consolidate the results afterwards into one clean overall report.
+- Remove duplicate findings and merge overlaps.
+
+Scope:
+- configuration and ENV management
+- secret handling
+- build and deploy process
+- differences between local, staging, and production
+- database migrations and data-integrity risks
+- jobs, queues, schedulers, webhooks, and integrations
+- logging, monitoring, health checks, and error detection
+- backups, restore, and recovery capability
+- runbooks, operational knowledge, and post-deploy checks
+- breaking changes, release risks, and rollback capability
+
+Important rules:
+- Review only.
+- Do not deploy anything.
+- Do not change configuration.
+- Do not alter infrastructure.
+- Do not create or delete files.
+- No generic platitudes; make concrete observations.
+- Do not invent operational mechanisms when they are missing or unclear.
+
+The consolidated report must include:
+1. a short summary
+2. the most important operations and release risks by priority
+3. affected files, processes, integrations, data flows, or operational areas
+4. why each issue matters
+5. a recommended direction for later operational or release improvement
+6. a classification of each finding as:
+   - safe to implement immediately
+   - requires coordination with Refactoring
+   - requires coordination with Security
+   - requires coordination with Documentation
+   - high impact / risky
+
+Quality criteria for the review:
+- reproducibility of operations
+- visibility into failures and silent partial outages
+- handling of migrations and data risk
+- quality of configuration, secrets, and environment separation
+- observability and recovery capability
+- realism of release and rollback assumptions
+- proportionality of the existing operational discipline
+
+Output requirements:
+- concrete and operationally relevant
+- prefer a few strong findings over a lot of generic text
+- clearly separate missing operational mechanisms from weakly implemented ones
+- clearly distinguish local developer convenience from production risk
+- explicitly mark where operations problems stem from architecture, security, or documentation gaps
+
+Final instruction:
+Spawn subagents for the review, then consolidate all findings and return only the prioritized review report. Do not implement anything, do not deploy anything, do not change anything.

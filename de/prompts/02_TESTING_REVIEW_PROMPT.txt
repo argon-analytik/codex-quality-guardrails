@@ -1,0 +1,55 @@
+Lies und befolge TESTING_GUARDRAILS.md vor allen Änderungen.
+
+Berücksichtige zusätzlich die Findings aus dem zuvor ausgeführten Spawn-Review. Behandle den Spawn-Review-Bericht als priorisierte Voranalyse:
+- validiere die dort genannten Findings am aktuellen Stand
+- schliesse bestätigte Testing-Lücken in diesem Pass, soweit sinnvoll
+- ergänze eigene zusätzliche Findings, wenn du weitere Verifikationsrisiken findest
+- übernimm Spawn-Findings nicht blind, sondern prüfe sie gegen Code, Verhalten und tatsächliches Risiko
+
+Aufgabe:
+Führe einen Testing- und Verifikations-Pass auf dieser App bzw. diesem Codebestand aus.
+
+Ziel:
+Die kritischen Verhaltensweisen der App sollen risikobasiert abgesichert werden. Ergänze oder verbessere Tests und Verifikation so, dass relevante Logik, Fehlerpfade, Berechtigungen, Zustandswechsel und Integrationen verlässlicher abgesichert sind, ohne in Test-Bürokratie abzugleiten.
+
+Scope:
+- prüfe bestehende Tests, kritische Flows, Fehlerpfade, Zustandsübergänge, Berechtigungslogik, Integrationen und relevante manuelle Checks
+- berücksichtige und validiere die priorisierten Findings aus dem ersten Spawn-Review
+- identifiziere zusätzlich Lücken, fragiles Testdesign oder fehlende Verifikation
+- ergänze oder verbessere Tests direkt dort, wo es echten Nutzen gibt
+- dokumentiere sinnvolle manuelle Verifikationsschritte dort, wo Automatisierung nicht die richtige Ebene ist
+
+Priorität:
+1. kritische Verhaltens- und Sicherheitsrisiken absichern
+2. bestätigte High-Priority-Findings aus dem Spawn-Review umsetzen
+3. Fehlerpfade, Randfälle und Zustandswechsel gezielt abdecken
+4. fragile oder schlecht zugeschnittene Tests verbessern
+5. Smoke- oder Release-relevante Kernpfade klarer verifizieren
+
+Wichtig:
+- nicht einfach Testanzahl erhöhen
+- Spawn-Review-Findings als Input verwenden, aber gegen reales Risiko validieren
+- Verhalten testen, nicht interne Implementation erraten
+- keine unnötigen E2E-Tests für triviale Fälle
+- keine fragilen Snapshot- oder Mock-Konstrukte ohne echten Nutzen
+- kritische Refactors ohne Verifikation nicht offenlassen
+- wenn Tests fehlen, priorisiert und gezielt ergänzen
+
+Achte besonders auf:
+- Auth-, Session- und Berechtigungslogik
+- Multi-Tenant-Trennung und Ownership
+- Import-/Export- und PDF-Flows
+- Jobs, Queues, Retries und Idempotenz
+- Datenvalidierung und Fehlerpfade
+- Statusübergänge und Unveränderlichkeit
+- Regressionsgefahr nach Refactoring
+- Bereiche, die bisher nur manuell und zu unsicher geprüft werden
+
+Gib am Ende aus:
+- welche Spawn-Review-Findings bestätigt wurden
+- welche davon direkt durch Tests oder Verifikation adressiert wurden
+- welche Spawn-Review-Findings verworfen, angepasst oder vertagt wurden
+- welche Tests neu erstellt oder angepasst wurden
+- welche Bereiche bewusst nur manuell verifiziert werden
+- welche Rest-Risiken oder Testlücken bleiben
+- welche zusätzlichen Checks vor Release sinnvoll sind

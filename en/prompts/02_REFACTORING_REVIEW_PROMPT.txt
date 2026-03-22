@@ -1,0 +1,63 @@
+Read and follow `REFACTORING_GUARDRAILS.md` before making any changes.
+
+Also take the findings from the previously executed spawn review into account. Treat the spawn review report as prioritized pre-analysis:
+- validate the reported findings against the current state
+- implement confirmed structural problems in this pass
+- add your own additional findings if you discover further technical problems
+- do not adopt spawn findings blindly; check them against the actual codebase
+
+Task:
+Perform a technical refactoring pass on this app or codebase. No unnecessary redesign, no architecture theater.
+
+Goal:
+The codebase should become clearer, more maintainable, more robust, and more consistent. Reduce complexity, decouple mixed responsibilities, consolidate duplication, and improve naming, structure, error handling, and testability where it makes sense.
+
+Scope:
+- review relevant modules, components, services, routes, handlers, helper functions, data models, and integration points
+- incorporate and validate the prioritized findings from the initial spawn review
+- identify additional structural problems, duplicated logic, unclear responsibilities, and unnecessary complexity
+- fix the problems directly in code
+- improve shared utilities, types, abstractions, and interfaces only where there is real value
+- preserve existing behavior unless a behavior is clearly faulty
+
+Priority:
+1. fix clearly problematic structure and mixed responsibilities
+2. implement confirmed high-priority findings from the spawn review
+3. consolidate duplicated or nearly duplicated logic
+4. sharpen naming and interfaces
+5. make error handling and data flows clearer
+6. protect test-critical areas or make them more testable
+
+Important:
+- do not just analyze; implement
+- use spawn-review findings as input, but validate them against the real codebase
+- do not introduce new layers if they bring no clear benefit
+- do not build artificial abstractions
+- do not do broad rewrites without clear return
+- do not introduce silent behavior changes
+- if shared logic occurs multiple times, consolidate it in the right place
+- if a refactor is risky, verify behavior deliberately
+
+Pay special attention to:
+- oversized files or functions
+- controllers, handlers, or components with too many jobs
+- copy-paste with small variations
+- cryptic names
+- magic constants
+- nested conditions
+- unclear side effects
+- inconsistent validation
+- unclear error paths
+- inconsistent types or data models
+- illogical folder or module structure
+- unnecessary re-renders, redundant requests, or needless mapping chains
+
+At the end, report:
+- a short analysis of the main problems
+- which spawn-review findings were confirmed
+- which of those were refactored directly
+- which spawn-review findings were rejected, adjusted, or postponed
+- changed files and modules
+- what was improved structurally
+- which duplicates or complexities were reduced
+- which risks, residual problems, or follow-up work remain

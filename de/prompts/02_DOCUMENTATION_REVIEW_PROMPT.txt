@@ -1,0 +1,58 @@
+Lies und befolge DOCUMENTATION_GUARDRAILS.md vor allen Änderungen.
+
+Berücksichtige zusätzlich die Findings aus dem zuvor ausgeführten Spawn-Review. Behandle den Spawn-Review-Bericht als priorisierte Voranalyse:
+- validiere die dort genannten Findings am aktuellen Stand
+- schliesse bestätigte Dokumentationslücken in diesem Pass
+- ergänze eigene zusätzliche Findings, wenn du weitere Lücken oder Widersprüche findest
+- übernimm Spawn-Findings nicht blind, sondern prüfe sie gegen Code und bestehende Dokumentation
+
+Aufgabe:
+Führe einen Dokumentations-Pass auf dieser App bzw. diesem Codebestand aus.
+
+Ziel:
+Die Dokumentation soll klar, präzise, aktuell und operativ nützlich sein. Dokumentiere nicht alles maximal, sondern risikobasiert und proportional zur tatsächlichen Komplexität und Betriebsrelevanz.
+
+Scope:
+- prüfe README, Architektur-Dokumentation, Setup-Hinweise, Runbooks, ENV-/Konfigurationsdokumentation, API-/Schnittstellen-Dokumentation und relevante In-Code-Dokumentation
+- berücksichtige und validiere die priorisierten Findings aus dem ersten Spawn-Review
+- identifiziere zusätzlich Lücken, veraltete Angaben, unklare Beschreibungen und fehlende Betriebs- oder Architekturinformationen
+- ergänze oder korrigiere die Dokumentation direkt
+- straffe generische oder redundante Texte
+- dokumentiere wichtige Entscheidungen, Grenzen, Risiken und Annahmen dort, wo sie für Betrieb, Übergabe oder Weiterentwicklung relevant sind
+
+Priorität:
+1. veraltete oder falsche Dokumentation korrigieren
+2. bestätigte High-Priority-Findings aus dem Spawn-Review umsetzen
+3. fehlende Setup-, Konfigurations- und Betriebsinformationen ergänzen
+4. Architektur, Zuständigkeiten und Datenflüsse nachvollziehbar machen
+5. sicherheits- und betriebsrelevante Annahmen dokumentieren
+6. Dokumentation so strukturieren, dass sie auch in einigen Monaten noch nutzbar ist
+
+Wichtig:
+- nichts erfinden
+- Spawn-Review-Findings als Input verwenden, aber gegen Code und reale Implementierung validieren
+- keine generischen KI-Textblöcke produzieren
+- keine Marketing-Sprache
+- Dokumentation nicht vom Code abkoppeln
+- wenn Verhalten, Konfiguration oder Architektur geändert wurden, Doku aktiv nachziehen
+- bei Unsicherheit klar markieren, was Annahme, Limit oder offener Punkt ist
+
+Achte besonders auf:
+- fehlende oder schwache README-Struktur
+- unklare Start- und Setup-Anweisungen
+- nicht erklärte ENV-Variablen
+- fehlende Hinweise zu Integrationen, Auth oder Rollen
+- fehlende Runbooks für produktive oder kritische Teile
+- unklare Datenflüsse oder Zustandsmodelle
+- fehlende Migrations- oder Breaking-Change-Hinweise
+- veraltete Copy-Paste-Dokumentation
+- Widersprüche zwischen Code und Dokumentation
+
+Gib am Ende aus:
+- welche Spawn-Review-Findings bestätigt wurden
+- welche davon dokumentiert, korrigiert oder ergänzt wurden
+- welche Spawn-Review-Findings verworfen, angepasst oder vertagt wurden
+- welche Dokumente erstellt oder geändert wurden
+- welche Lücken geschlossen wurden
+- welche Architektur-, Betriebs- oder Sicherheitsannahmen dokumentiert wurden
+- welche offenen Punkte oder Doku-Limits bleiben

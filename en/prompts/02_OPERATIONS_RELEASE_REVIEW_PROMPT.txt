@@ -1,0 +1,53 @@
+Read and follow `OPERATIONS_RELEASE_GUARDRAILS.md` before making any changes.
+
+Also take the findings from the previously executed spawn review into account. Treat the spawn review report as prioritized pre-analysis:
+- validate the reported findings against the current state
+- fix confirmed operational or release-relevant problems in this pass where sensible and proportional
+- add your own additional findings if you discover further operations or release risks
+- do not adopt spawn findings blindly; check them against implementation, documentation, and the real operational profile
+
+Task:
+Perform an operations and release pass on this app or system.
+
+Goal:
+The solution should become more controllable to operate, more observable, and more releasable. Reduce real operational and release risks pragmatically without introducing unnecessary process overhead.
+
+Scope:
+- review configuration, ENV management, secret handling, build/deploy, migrations, jobs, integrations, logging, monitoring, health checks, backups, restore, runbooks, and post-deploy checks
+- incorporate and validate the prioritized findings from the initial spawn review
+- identify additional operational gaps, silent failure risks, or weak release discipline
+- improve operational foundations directly where there is real value
+- update operations-relevant documentation or runbooks where needed
+
+Priority:
+1. reduce critical operational, data, or release risks
+2. implement confirmed high-priority findings from the spawn review
+3. harden configuration, secrets, and migration paths
+4. improve observability, health checks, and post-deploy verification
+5. close recovery, rollback, and runbook gaps more clearly
+
+Important:
+- do not create unnecessary enterprise-process load
+- use spawn-review findings as input, but validate them against real risk
+- do not claim imaginary monitoring, backup, or rollback mechanisms
+- do not recommend production changes blindly when risk or context is unclear
+- take silent partial failures and integration issues seriously
+- actively update operational documentation when changes are made
+
+Pay special attention to:
+- ENV and secret hygiene
+- deploy reproducibility
+- database migrations and backfills
+- queue, job, and webhook failures
+- missing health checks or poor error detection
+- backup, restore, and recovery gaps
+- missing post-deploy smoke checks
+- unclear breaking-change or rollback scenarios
+
+At the end, report:
+- which spawn-review findings were confirmed
+- which of those were directly improved, mitigated, or documented
+- which spawn-review findings were rejected, adjusted, or postponed
+- which operational or release-relevant areas were changed
+- which runbooks, checks, or documentation were added
+- which residual risks or release notes remain

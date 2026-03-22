@@ -1,0 +1,53 @@
+Read and follow `ACCESSIBILITY_GUARDRAILS.md` before making any changes.
+
+Also take the findings from the previously executed spawn review into account. Treat the spawn review report as prioritized pre-analysis:
+- validate the reported findings against the current state
+- fix confirmed accessibility problems in this pass where sensible
+- add your own additional findings if you discover more barriers
+- do not adopt spawn findings blindly; check them against real interaction and semantics
+
+Task:
+Perform an accessibility pass on this app.
+
+Goal:
+The interface should become more robust, understandable, and easier to use, especially for keyboard use, focus management, forms, dynamic components, readability, and semantic accessibility.
+
+Scope:
+- review interaction, semantics, focus management, form behavior, contrast, readability, tables, dialogs, and dynamic states
+- incorporate and validate the prioritized findings from the initial spawn review
+- identify additional barriers or unclear interaction patterns
+- fix relevant problems directly in the code
+- improve semantics, states, and interaction logic where there is real value
+
+Priority:
+1. fix usability barriers with high risk of confusion or failure
+2. implement confirmed high-priority findings from the spawn review
+3. improve keyboard use, focus, and form clarity
+4. make dynamic components more accessible
+5. reduce contrast, zoom, and readability problems
+
+Important:
+- do not just smooth things visually; improve real accessibility
+- use spawn-review findings as input, but validate them against real interaction
+- no unnecessary ARIA decoration without semantic benefit
+- take focus management and keyboard behavior seriously
+- do not simulate accessibility through colors or labels alone
+- keep design consistency in mind when changing components
+
+Pay special attention to:
+- clickable `div`s instead of real buttons
+- missing labels or unclear error messages
+- invisible focus states
+- modal dialogs without focus return
+- menus, tabs, or accordions with weak keyboard behavior
+- tables and filters with poor usability
+- states conveyed only through color
+- clipped content at zoom or tight layouts
+
+At the end, report:
+- which spawn-review findings were confirmed
+- which of those were fixed directly
+- which spawn-review findings were rejected, adjusted, or postponed
+- which accessibility areas were improved
+- which areas should still be verified manually
+- which residual barriers or open points remain

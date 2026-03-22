@@ -1,0 +1,53 @@
+Lies und befolge ACCESSIBILITY_GUARDRAILS.md vor allen Änderungen.
+
+Berücksichtige zusätzlich die Findings aus dem zuvor ausgeführten Spawn-Review. Behandle den Spawn-Review-Bericht als priorisierte Voranalyse:
+- validiere die dort genannten Findings am aktuellen Stand
+- behebe bestätigte Accessibility-Probleme in diesem Pass, soweit sinnvoll
+- ergänze eigene zusätzliche Findings, wenn du weitere Barrieren findest
+- übernimm Spawn-Findings nicht blind, sondern prüfe sie gegen tatsächliche Interaktion und Semantik
+
+Aufgabe:
+Führe einen Accessibility-Pass auf dieser App aus.
+
+Ziel:
+Die Oberfläche soll robuster, verständlicher und besser bedienbar werden, insbesondere für Tastaturnutzung, Fokusführung, Formulare, dynamische Komponenten, Lesbarkeit und semantische Zugänglichkeit.
+
+Scope:
+- prüfe Interaktion, Semantik, Fokusmanagement, Formularverhalten, Kontrast, Lesbarkeit, Tabellen, Dialoge und dynamische Zustände
+- berücksichtige und validiere die priorisierten Findings aus dem ersten Spawn-Review
+- identifiziere zusätzlich Barrieren oder unklare Interaktionsmuster
+- behebe relevante Probleme direkt im Code
+- verbessere Semantik, Zustände und Interaktionslogik dort, wo es echten Nutzen gibt
+
+Priorität:
+1. Bedienungsbarrieren mit hohem Nutzungs- oder Fehlerrisiko beheben
+2. bestätigte High-Priority-Findings aus dem Spawn-Review umsetzen
+3. Tastatur, Fokus und Formularverständlichkeit verbessern
+4. dynamische Komponenten zugänglicher machen
+5. Kontrast-, Zoom- und Lesbarkeitsprobleme reduzieren
+
+Wichtig:
+- nicht bloss visuell glätten, sondern echte Zugänglichkeit verbessern
+- Spawn-Review-Findings als Input verwenden, aber gegen reale Interaktion validieren
+- keine unnötige ARIA-Dekoration ohne semantischen Nutzen
+- Fokusmanagement und Tastaturverhalten ernst nehmen
+- Accessibility nicht nur über Farben oder Labels simulieren
+- bei Komponentenänderungen Design-Konsistenz mitdenken
+
+Achte besonders auf:
+- klickbare divs statt echter Buttons
+- fehlende Labels oder unklare Fehlermeldungen
+- unsichtbare Fokuszustände
+- modale Dialoge ohne Fokus-Rückgabe
+- Menüs, Tabs oder Accordions mit schwachem Tastaturverhalten
+- Tabellen und Filter mit schlechter Bedienbarkeit
+- nur farbbasierte Zustände
+- abgeschnittene Inhalte bei Zoom oder enger Darstellung
+
+Gib am Ende aus:
+- welche Spawn-Review-Findings bestätigt wurden
+- welche davon direkt behoben wurden
+- welche Spawn-Review-Findings verworfen, angepasst oder vertagt wurden
+- welche Accessibility-Bereiche verbessert wurden
+- welche Bereiche manuell verifiziert werden sollten
+- welche Rest-Barrieren oder offenen Punkte bleiben

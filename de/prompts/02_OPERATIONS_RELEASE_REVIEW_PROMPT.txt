@@ -1,0 +1,53 @@
+Lies und befolge OPERATIONS_RELEASE_GUARDRAILS.md vor allen Änderungen.
+
+Berücksichtige zusätzlich die Findings aus dem zuvor ausgeführten Spawn-Review. Behandle den Spawn-Review-Bericht als priorisierte Voranalyse:
+- validiere die dort genannten Findings am aktuellen Stand
+- behebe bestätigte betriebliche oder release-relevante Probleme in diesem Pass, soweit sinnvoll und verhältnismässig
+- ergänze eigene zusätzliche Findings, wenn du weitere Operations- oder Release-Risiken findest
+- übernimm Spawn-Findings nicht blind, sondern prüfe sie gegen Implementierung, Dokumentation und reales Betriebsprofil
+
+Aufgabe:
+Führe einen Operations- und Release-Pass auf dieser App bzw. diesem System aus.
+
+Ziel:
+Die Lösung soll kontrollierter betreibbar, beobachtbarer und freigabefähiger werden. Reduziere reale Betriebs- und Release-Risiken pragmatisch, ohne unnötigen Prozess-Overhead einzuführen.
+
+Scope:
+- prüfe Konfiguration, ENV-Management, Secret-Handling, Build/Deploy, Migrationen, Jobs, Integrationen, Logging, Monitoring, Healthchecks, Backups, Restore, Runbooks und Post-Deploy-Checks
+- berücksichtige und validiere die priorisierten Findings aus dem ersten Spawn-Review
+- identifiziere zusätzlich betriebliche Lücken, stille Ausfallrisiken oder schwache Release-Disziplin
+- verbessere betriebliche Grundlagen direkt dort, wo es echten Nutzen gibt
+- aktualisiere betriebsrelevante Dokumentation oder Runbooks, wo nötig
+
+Priorität:
+1. kritische Betriebs-, Daten- oder Release-Risiken reduzieren
+2. bestätigte High-Priority-Findings aus dem Spawn-Review umsetzen
+3. Konfiguration, Secrets und Migrationspfade härten
+4. Beobachtbarkeit, Healthchecks und Post-Deploy-Verifikation verbessern
+5. Recovery-, Rollback- und Runbook-Lücken klarer schliessen
+
+Wichtig:
+- keine unnötige Enterprise-Prozesslast erzeugen
+- Spawn-Review-Findings als Input verwenden, aber gegen reales Risiko validieren
+- keine imaginären Monitoring-, Backup- oder Rollback-Mechanismen behaupten
+- keine produktiven Änderungen blind empfehlen, wenn Risiko oder Kontext unklar sind
+- stille Teil-Ausfälle und Integrationsprobleme explizit ernst nehmen
+- betriebliche Doku bei Änderungen aktiv nachziehen
+
+Achte besonders auf:
+- ENV- und Secret-Hygiene
+- Deploy-Reproduzierbarkeit
+- Datenbankmigrationen und Backfills
+- Queue-, Job- und Webhook-Fehler
+- fehlende Healthchecks oder schlechte Fehlererkennung
+- Backups, Restore und Recovery-Lücken
+- fehlende Post-Deploy-Smoke-Checks
+- unklare Breaking-Change- oder Rollback-Szenarien
+
+Gib am Ende aus:
+- welche Spawn-Review-Findings bestätigt wurden
+- welche davon direkt verbessert, mitigiert oder dokumentiert wurden
+- welche Spawn-Review-Findings verworfen, angepasst oder vertagt wurden
+- welche betriebs- oder release-relevanten Bereiche geändert wurden
+- welche Runbooks, Checks oder Doku ergänzt wurden
+- welche Rest-Risiken oder Freigabe-Hinweise bleiben

@@ -1,0 +1,58 @@
+Read and follow `DOCUMENTATION_GUARDRAILS.md` before making any changes.
+
+Also take the findings from the previously executed spawn review into account. Treat the spawn review report as prioritized pre-analysis:
+- validate the reported findings against the current state
+- close confirmed documentation gaps in this pass
+- add your own additional findings if you discover more gaps or contradictions
+- do not adopt spawn findings blindly; check them against code and existing documentation
+
+Task:
+Perform a documentation pass on this app or codebase.
+
+Goal:
+The documentation should become clear, precise, current, and operationally useful. Do not document everything maximally; document in a risk-based way and in proportion to the actual complexity and operational relevance.
+
+Scope:
+- review the README, architecture documentation, setup notes, runbooks, ENV/configuration documentation, API/interface documentation, and relevant in-code documentation
+- incorporate and validate the prioritized findings from the initial spawn review
+- identify additional gaps, outdated statements, unclear descriptions, and missing operational or architecture information
+- extend or correct the documentation directly
+- tighten generic or redundant text
+- document important decisions, boundaries, risks, and assumptions where they matter for operations, handover, or further development
+
+Priority:
+1. correct outdated or incorrect documentation
+2. implement confirmed high-priority findings from the spawn review
+3. add missing setup, configuration, and operational information
+4. make architecture, responsibilities, and data flows understandable
+5. document security- and operations-relevant assumptions
+6. structure the documentation so it is still useful a few months from now
+
+Important:
+- do not invent facts
+- use spawn-review findings as input, but validate them against code and the real implementation
+- do not produce generic AI text blocks
+- no marketing language
+- do not decouple documentation from code
+- if behavior, configuration, or architecture changed, actively update the docs
+- where there is uncertainty, clearly mark what is an assumption, a limit, or an open point
+
+Pay special attention to:
+- missing or weak README structure
+- unclear start and setup instructions
+- unexplained environment variables
+- missing notes on integrations, auth, or roles
+- missing runbooks for production or critical parts
+- unclear data flows or state models
+- missing migration or breaking-change notes
+- outdated copy-paste documentation
+- contradictions between code and documentation
+
+At the end, report:
+- which spawn-review findings were confirmed
+- which of those were documented, corrected, or added
+- which spawn-review findings were rejected, adjusted, or postponed
+- which documents were created or changed
+- which gaps were closed
+- which architecture, operational, or security assumptions were documented
+- which open points or documentation limits remain

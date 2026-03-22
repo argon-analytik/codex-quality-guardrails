@@ -1,0 +1,55 @@
+Read and follow `TESTING_GUARDRAILS.md` before making any changes.
+
+Also take the findings from the previously executed spawn review into account. Treat the spawn review report as prioritized pre-analysis:
+- validate the reported findings against the current state
+- close confirmed testing gaps in this pass where sensible
+- add your own additional findings if you discover further verification risks
+- do not adopt spawn findings blindly; check them against code, behavior, and real risk
+
+Task:
+Perform a testing and verification pass on this app or codebase.
+
+Goal:
+The app's critical behaviors should be protected in a risk-based way. Add or improve tests and verification so that relevant logic, error paths, permissions, state transitions, and integrations are protected more reliably, without sliding into test bureaucracy.
+
+Scope:
+- review existing tests, critical flows, error paths, state transitions, permission logic, integrations, and relevant manual checks
+- incorporate and validate the prioritized findings from the initial spawn review
+- identify additional gaps, fragile test design, or missing verification
+- add or improve tests directly where there is real value
+- document sensible manual verification steps where automation is not the right level
+
+Priority:
+1. protect critical behavior and security risks
+2. implement confirmed high-priority findings from the spawn review
+3. cover error paths, edge cases, and state transitions deliberately
+4. improve fragile or poorly scoped tests
+5. verify smoke- or release-relevant core paths more clearly
+
+Important:
+- do not simply increase test count
+- use spawn-review findings as input, but validate them against real risk
+- test behavior, not guessed internal implementation
+- do not add unnecessary end-to-end tests for trivial cases
+- do not use fragile snapshot or mock setups without real value
+- do not leave critical refactors unverified
+- if tests are missing, add them deliberately and by priority
+
+Pay special attention to:
+- auth, session, and permission logic
+- multi-tenant separation and ownership
+- import/export and PDF flows
+- jobs, queues, retries, and idempotency
+- data validation and error paths
+- state transitions and immutability
+- regression risk after refactoring
+- areas that are currently only reviewed manually and too unsafely
+
+At the end, report:
+- which spawn-review findings were confirmed
+- which of those were addressed directly through tests or verification
+- which spawn-review findings were rejected, adjusted, or postponed
+- which tests were newly created or changed
+- which areas are deliberately verified manually only
+- which residual risks or testing gaps remain
+- which additional checks would be useful before release
