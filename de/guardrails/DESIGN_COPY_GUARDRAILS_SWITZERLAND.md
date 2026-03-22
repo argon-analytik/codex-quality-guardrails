@@ -6,6 +6,7 @@ Für allen deutschsprachigen, sichtbaren Text in UI, E-Mails, PDFs, Portalen, No
 - ss statt ß
 - Schweizer Typografie
 - « » statt " " in sichtbarer Kommunikation, wo typografisch passend
+- ‹ › für einfache Anführungen, wo typografisch passend
 
 ## Ausnahmen
 ASCII-nahe Schreibweisen wie ae, oe, ue sind erlaubt in:
