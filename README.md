@@ -67,7 +67,7 @@ This repository is meant to turn that into **a systematic way of working**.
 For most serious projects, this core set is sensible:
 
 - `DESIGN_GUARDRAILS.md`
-- `DESIGN_COPY_GUARDRAILS.md`
+- one locale-specific copy guardrail, for example `DESIGN_COPY_GUARDRAILS_SWITZERLAND.md` or `DESIGN_COPY_GUARDRAILS_GERMANY.md`
 - `REFACTORING_GUARDRAILS.md`
 - `SECURITY_GUARDRAILS.md`
 - `DOCUMENTATION_GUARDRAILS.md`
@@ -153,14 +153,16 @@ Goal:
 
 ## Using This with the Codex Desktop App
 
-The repository currently contains Swiss-German material in `/de_ch` and the English version in `/en`.
+The repository currently contains German material in `/de` and the English version in `/en`.
 
 Important nuance:
 
-- `/de_ch/guardrails/DESIGN_COPY_GUARDRAILS.md` contains Swiss typographic rules for visible German text, for example guillemets `« »` and `ss` instead of `ß`.
-- Teams in Germany or Austria should adapt those copy guardrails to their own typographic and orthographic conventions instead of applying the Swiss rules blindly.
-- `/en/guardrails/DESIGN_COPY_GUARDRAILS.md` contains general English typography defaults.
-- If your English product targets a specific locale such as the US, UK, Australia, or another market, adapt those copy rules consistently to that locale as well.
+- `/de/guardrails/DESIGN_COPY_GUARDRAILS_SWITZERLAND.md` contains Swiss typographic rules for visible German text, for example guillemets `« »` and `ss` instead of `ß`.
+- `/de/guardrails/DESIGN_COPY_GUARDRAILS_GERMANY.md` contains German typographic rules, for example German quotation marks and the use of `ß` according to German orthography.
+- Use the copy file that matches your target locale instead of applying one variant blindly.
+- If you target Austria or another German-speaking market, adapt the closer German-language variant to that market's rules.
+- More generally, every language and country should respect its own typographic conventions.
+- The English file `/en/guardrails/DESIGN_COPY_GUARDRAILS.md` is therefore only a base file and should be adapted when your English product follows a specific national or editorial standard.
 
 ### 1. Copy the files into your project
 
@@ -169,7 +171,8 @@ Place the guardrails in your repository, for example like this:
 ```text
 /guardrails
   DESIGN_GUARDRAILS.md
-  DESIGN_COPY_GUARDRAILS.md
+  DESIGN_COPY_GUARDRAILS_SWITZERLAND.md
+  DESIGN_COPY_GUARDRAILS_GERMANY.md
   REFACTORING_GUARDRAILS.md
   SECURITY_GUARDRAILS.md
   SECURITY_PROFILE_MATRIX.md
@@ -194,6 +197,8 @@ Place the guardrails in your repository, for example like this:
   01_ACCESSIBILITY_SPAWN_REVIEW_PROMPT.txt
   02_ACCESSIBILITY_REVIEW_PROMPT.txt
 ```
+
+Choose or adapt the copy file that matches the language and country you are shipping for.
 
 You can also place the files in the repository root. The important part is that Codex can read them clearly and that the paths stay consistent.
 
@@ -274,7 +279,7 @@ It should:
 ```text
 codex-quality-guardrails/
 ├─ README.md
-├─ de_ch/
+├─ de/
 │  ├─ guardrails/
 │  └─ prompts/
 └─ en/
@@ -305,9 +310,10 @@ Documentation, tests, security hardening, and accessibility should stay concrete
 The guardrails define **what** a domain should achieve. The `01_` and `02_` prompts define **how** the corresponding pass should run.
 
 ### 6. Copy rules are locale-specific
-`DESIGN_COPY_GUARDRAILS.md` is intentionally language- and locale-aware.
-The Swiss-German rules in `/de_ch` are correct for Switzerland, but not automatically for Germany or Austria.
-The English rules in `/en` are general defaults and should also be adapted when a product follows a specific national typographic style.
+The copy guardrails are intentionally language- and locale-aware.
+In `/de`, there are separate German-language variants for Switzerland and Germany.
+If you ship for Austria or another German-speaking locale, adapt the closer variant instead of assuming one file fits all.
+The English rules in `/en` are likewise only a base and should be adapted when a product follows a specific national or editorial typographic style.
 
 ---
 
