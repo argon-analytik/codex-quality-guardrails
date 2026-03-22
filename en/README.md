@@ -52,7 +52,7 @@ This repository is meant to turn that into **a systematic way of working**.
 | Area | Purpose | Standard or optional? | Especially useful when |
 |---|---|---:|---|
 | **Design** | visual calm, consistency, readability, UI/UX polish | Standard | as soon as a UI exists |
-| **Copy** | visible language, UI text, typography conventions | Standard add-on | together with Design |
+| **Copy** | visible language, UI text, typography conventions, locale-specific editorial rules | Standard add-on | together with Design |
 | **Refactoring** | structure, naming, maintainability, decoupling | Standard | almost always |
 | **Security** | risk-based security review and hardening | Standard | almost always |
 | **Documentation** | setup, architecture, operations, handover, assumptions | Standard | almost always |
@@ -153,7 +153,14 @@ Goal:
 
 ## Using This with the Codex Desktop App
 
-The repository currently contains the original German material in `/de` and the English version in `/en`.
+The repository currently contains Swiss-German material in `/de_ch` and the English version in `/en`.
+
+Important nuance:
+
+- `/de_ch/guardrails/DESIGN_COPY_GUARDRAILS.md` contains Swiss typographic rules for visible German text, for example guillemets `« »` and `ss` instead of `ß`.
+- Teams in Germany or Austria should adapt those copy guardrails to their own typographic and orthographic conventions instead of applying the Swiss rules blindly.
+- `/en/guardrails/DESIGN_COPY_GUARDRAILS.md` contains general English typography defaults.
+- If your English product targets a specific locale such as the US, UK, Australia, or another market, adapt those copy rules consistently to that locale as well.
 
 ### 1. Copy the files into your project
 
@@ -267,7 +274,7 @@ It should:
 ```text
 codex-quality-guardrails/
 ├─ README.md
-├─ de/
+├─ de_ch/
 │  ├─ guardrails/
 │  └─ prompts/
 └─ en/
@@ -296,6 +303,11 @@ Documentation, tests, security hardening, and accessibility should stay concrete
 
 ### 5. Codex needs clear responsibilities
 The guardrails define **what** a domain should achieve. The `01_` and `02_` prompts define **how** the corresponding pass should run.
+
+### 6. Copy rules are locale-specific
+`DESIGN_COPY_GUARDRAILS.md` is intentionally language- and locale-aware.
+The Swiss-German rules in `/de_ch` are correct for Switzerland, but not automatically for Germany or Austria.
+The English rules in `/en` are general defaults and should also be adapted when a product follows a specific national typographic style.
 
 ---
 
