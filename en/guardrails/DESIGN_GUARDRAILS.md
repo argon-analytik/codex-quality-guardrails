@@ -96,23 +96,14 @@ Not overloaded.
 Not playful.
 Not visually loud.
 
-## Language and Typography Rules for Visible German Text
-For all visible German text:
-- use `ä ö ü` instead of `ae oe ue`
-- never use `ß`; always use `ss`
-- use Swiss typography
-- use `« »` in visible communication where typographically appropriate
+## Language and Typography Rules for Visible Text
+Visible product copy must follow the appropriate copy guardrail for the target language and locale.
 
-Exceptions:
-- code
-- slugs
-- identifiers
-- URLs
-- filenames
-- paths
-- CLI commands
-- technical keys
-- `kebab-case` / `snake_case`
+In particular:
+- use `/en/guardrails/DESIGN_COPY_GUARDRAILS.md` as the English base file
+- if the product follows a specific editorial locale, adapt that file deliberately instead of assuming one English typographic standard fits all
+- if you work in another language, maintain the equivalent locale-specific copy guardrail for that language and market
+- keep technical strings, code, and human-visible language clearly separated
 
 ## Technical Discipline
 Do not hide problems with ad hoc CSS if the real cause sits in a shared component, token, or layout rule.
@@ -135,7 +126,7 @@ A UI/UX polishing pass is only done when:
 - forms are more readable and less cramped
 - action areas use space efficiently
 - scroll behavior works correctly
-- visible German text follows the language rules above
+- visible text follows the applicable copy and typography rules for the target language and locale
 - the result feels calmer, cleaner, and more deliberate without losing functionality
 
 ## Required Output After Every Polishing Pass

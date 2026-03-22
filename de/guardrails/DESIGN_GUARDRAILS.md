@@ -96,23 +96,13 @@ Nicht überladen.
 Nicht verspielt.
 Nicht visuell laut.
 
-## Sprach- und Typografie-Regeln für sichtbaren deutschen Text
-Für allen sichtbaren deutschen Text gilt:
-- verwende ä ö ü statt ae oe ue
-- verwende nie ß, sondern immer ss
-- verwende Schweizer Typografie
-- verwende « » in sichtbarer Kommunikation, wo typografisch passend
-
-Ausnahmen:
-- Code
-- Slugs
-- Identifiers
-- URLs
-- Dateinamen
-- Pfade
-- CLI-Befehle
-- technische Keys
-- kebab-case / snake_case
+## Sprach- und Typografie-Regeln für sichtbaren Text
+Für sichtbaren Text gilt:
+- richte dich nach der passenden Copy-Guardrail-Datei für Sprache und Zielmarkt
+- in `/de/guardrails/` verwende `DESIGN_COPY_GUARDRAILS_SWITZERLAND.md` für die Schweiz oder `DESIGN_COPY_GUARDRAILS_GERMANY.md` für Deutschland
+- für Österreich oder andere deutschsprachige Zielmärkte passe die nähere Variante bewusst an
+- für andere Sprachen oder Märkte gilt dieselbe Regel: typografische Normen nicht blind übernehmen, sondern gezielt anpassen
+- technische Strings, Code und menschlich sichtbare Sprache klar trennen
 
 ## Technische Disziplin
 Kaschiere Probleme nicht mit ad-hoc CSS, wenn die Ursache in einer gemeinsamen Komponente, einem Token oder einer Layout-Regel liegt.
@@ -135,7 +125,7 @@ Ein UI/UX-Polishing-Pass ist erst fertig, wenn:
 - Formulare lesbarer und weniger gequetscht sind
 - Action-Bereiche den Platz effizient nutzen
 - Scrollverhalten korrekt ist
-- sichtbarer deutscher Text die Sprachregeln oben einhält
+- sichtbarer Text die passende Copy-Guardrail für Sprache und Zielmarkt einhält
 - das Resultat ruhiger, sauberer und bewusster wirkt, ohne Funktionalität zu verlieren
 
 ## Pflichtausgabe nach jedem Polishing-Pass
